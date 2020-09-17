@@ -28,7 +28,7 @@ app.post('/alunno/:id/delete', async (req, res) => {
   res.redirect('/');
 });
 
-const PORT = 5000;
+const PORT = 5000 || process.env.PORT;
 app.listen(PORT, (err) => {
   if (!err) console.log(`Server in esecuzione su porta ${PORT}`);
 });
