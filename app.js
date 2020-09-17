@@ -22,13 +22,13 @@ app.post('/alunno', async (req, res) => {
   res.redirect('/');
 });
 
-app.post('/alunno/:id/delete', async (req, res) => {
-  const a = await Alunno.findAll({ where: { _id: req.params.id } });
-  console.log('Devo eliminare', a);
+app.post('/alunno/:id/delete', (req, res) => {
+  Alunno.findByPk(req.params.id).then(alunno => alunno.destroy());
+  console.log(`[${req.params.id}] Eliminato`);
   res.redirect('/');
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, (err) => {
+app.listen(PORT, err => {
   if (!err) console.log(`Server in esecuzione su porta ${PORT}`);
 });
