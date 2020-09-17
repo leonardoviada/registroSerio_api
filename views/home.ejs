@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elenco Alunni</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/5cea2e2114.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron my-4 py-2">
+        <h1>Elenco Alunni</h1>
+        <p>sqlite + express + ejs + node</p>
+      </div>
+
+      <hr />
+      <%- include('./form.ejs') %>
+
+      <table class="table my-5">
+        <tr>
+          <th>Nome</th>
+          <th>Cognome</th>
+          <th>E-Mail</th>
+          <th>Classe</th>
+          <th>Azioni</th>
+        </tr>
+        <% alunni.forEach(alunno => { %>
+        <tr>
+          <td><%= alunno.nome %></td>
+          <td><%= alunno.cognome %></td>
+          <td><%= alunno.mail %></td>
+          <td><%= alunno._id_classe %></td>
+          <td>
+            <form action="/alunno/<%=alunno._id%>/delete" method="POST">
+              <button class="btn btn-xs btn-light">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </table>
+
+      <footer>
+        <div class="bg-light fixed">
+          <div class="container py-2 text-secondary">2020 Leonardo Viada</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
