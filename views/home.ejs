@@ -17,13 +17,30 @@
     <div class="container">
       <div class="jumbotron my-4 py-2">
         <h1>Elenco Alunni</h1>
-        <p>sqlite + express + ejs + node</p>
+        <h6 class="text-secondary">
+          <strong
+            ><i class="fab fa-github-square mr-1"></i>
+            <a
+              class="text-secondary"
+              href="https://github.com/leonardoviada/sqlite_orm_playground"
+              >https://github.com/leonardoviada/sqlite_orm_playground</a
+            >
+          </strong>
+        </h6>
+        <h6 class="text-secondary">
+          <strong
+            ><i class="fas fa-code"></i>
+            <a class="text-secondary" href="https://github.com/leonardoviada"
+              >@leonardoviada</a
+            >
+          </strong>
+        </h6>
       </div>
 
       <hr />
       <%- include('./form.ejs') %>
 
-      <table class="table my-5">
+      <table class="table table-striped table-bordered my-5">
         <tr>
           <th>Nome</th>
           <th>Cognome</th>
@@ -47,12 +64,6 @@
         </tr>
         <% }) %>
       </table>
-
-      <footer>
-        <div class="bg-light fixed">
-          <div class="container py-2 text-secondary">2020 Leonardo Viada</div>
-        </div>
-      </footer>
     </div>
   </body>
 </html>
