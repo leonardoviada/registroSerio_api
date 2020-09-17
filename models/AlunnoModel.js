@@ -1,4 +1,5 @@
 const AlunnoModel = (sequelize, Sequelize) => {
+  /* Definizione della "tabella" Alunno */
   return sequelize.define(
     'Alunno',
     {
