@@ -1,24 +1,21 @@
-const AlunnoModel = (sequelize, Sequelize) => {
+const ClasseModel = (sequelize, Sequelize) => {
   /* Definizione della "tabella" Alunno */
   return sequelize.define(
-    'Alunno',
+    'Classe',
     {
       _id: {
         type: Sequelize.DataTypes.UUID,
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4,
       },
-      nome: {
+      anno: {
+        type: Sequelize.DataTypes.INTEGER,
+      },
+      sezione: {
         type: Sequelize.DataTypes.STRING,
       },
-      cognome: {
+      spec: {
         type: Sequelize.DataTypes.STRING,
-      },
-      mail: {
-        type: Sequelize.DataTypes.STRING,
-      },
-      _id_classe: {
-        type: Sequelize.DataTypes.UUID,
       },
     },
     {
@@ -27,4 +24,4 @@ const AlunnoModel = (sequelize, Sequelize) => {
   );
 };
 
-module.exports = AlunnoModel;
+module.exports = ClasseModel;
